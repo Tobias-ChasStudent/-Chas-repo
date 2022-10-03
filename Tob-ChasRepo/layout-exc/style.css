@@ -1,0 +1,14 @@
+body {}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+}
+section {
+    background-color: red;
+    flex: 1;
+}
+aside {
+    background-color: blue;
+    flex: 3;
+}
