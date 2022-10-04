@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+  
+  html {
+
+    font-family: 'Roboto', 'sans-serf';
+    font-weight: 900;
+    font-size: 10px;
+    color: var(--black);
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 50px;
+    background: #D38312;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A83279, #D38312);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A83279, #D38312); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  
+  
+   /* Testa dessa 3 olika sätt och beskriv skillnaden!
+
+      
+      justify-items: Sätt storleken på child element.
+      align-items: Jag kan inte se någon skillnad, men när jag kollade på en annan hemsida 
+      såg jag att den ändrar storleken på child element på den vertikala axisen.
+
+      align-self: Jag kan inte se någon skillnad, men när jag kollade på en annan hemsida
+      såg jag att den ändrar på det specificerade elementet på den vertikala axisen.
+      justify-self: Ändrar på det valda elementet på den vertikala axises.
+
+      justify-content:Jag kan inte se någon skillnad, men när jag kollade på en annan hemsida
+      såg jag att den ändrar på utrymmet mellan element på den vertikala axisen
+      align-content:Jag kan inte se någon skillnad, men när jag kollade på en annan hemsida
+      såg jag att den ändrar på utrymmet mellan element på den horisontella axisen
+
+      justify-* är "row axis"
+      align-* är "column axis"
+    */
+
+    .container {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(10, 1fr);
+        align-content: space-between;
+      }
+
+      .item {
+        background: #fff;
+        text-align: center;
+      }
+      .item14 {
+        align-self: center;
+      }

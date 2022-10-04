@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+    --black: #00035f;
+    --red: #F25B43;
+    --light-yellow: #F7DB72;
+    --yellow: #FAA528;
+    --cerise: #C13291;
+    --purple: #793DC3;
+    --blue: #67A1CE;
+    font-size: 18px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    padding: 1em 1rem;
+}
+
+p {
+    margin: 0;
+    padding: 1.5rem 1rem;
+}
+
+
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.5;
+    color: var(--black);
+
+
+}
+
+.container>* {
+    padding: 1em 2em;
+}
+
+
+.container {
+    /* Define CSS Grid template here */
+    display: grid;
+    grid-template: auto 1fr auto auto / 15% repeat(6, minmax(auto, 10rem)) 15%;
+    grid-template-areas: 
+    "header header header header header header header header"
+    ". main main main main sidebar sidebar ."
+    ". ad-1 ad-1 ad-1 ad-2 ad-2 ad-2 ."
+    "footer footer footer footer footer footer footer footer";
+}
+
+
+.container .header {
+    background-color: #793DC3;
+    grid-area: header;
+}
+
+.container .main-content {
+    background-color: #FAA528;
+    grid-area: main;
+}
+
+.container .sidebar {
+    background-color: #F25B43;
+    grid-area: sidebar;
+}
+
+.container .adspace-1 {
+    background-color: #F7DB71;
+    grid-area: ad-1;
+}
+
+.container .adspace-2 {
+    background-color: #C13291;
+    grid-area: ad-2;
+}
+
+.container .footer {
+    background-color: #67A1CE;
+    grid-area: footer;
+}
