@@ -34,3 +34,16 @@ main>* {
 img {
     width: 90%;
 }
+@media screen and (min-width: 900px) {
+    .header {
+        margin: 20px;
+    }
+    nav ul {
+        overflow: hidden;
+    }
+    main {
+        width: 70%;
+        margin: auto;
+        grid-template: auto / repeat(3, 1fr);
+    }
+}
