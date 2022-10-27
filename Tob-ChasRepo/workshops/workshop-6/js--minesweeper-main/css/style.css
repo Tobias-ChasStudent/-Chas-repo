@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.dark-right {
+    border-top: #EDEDED 5px solid;
+    border-left: #EDEDED 5px solid;
+    border-right: #808080 5px solid;
+    border-bottom: #808080 5px solid;
+}
+.dark-left {
+    border-top: #808080 5px solid;
+    border-left: #808080 5px solid;
+    border-right: #EDEDED 5px solid;
+    border-bottom: #EDEDED 5px solid;
+}
+
+.container {
+    width: 280px;
+    margin: 20px auto;
+    background-color: #C6C6C6;
+    padding: 10px;
+}
+header {
+    padding: 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+header {
+    font-size: 40px;
+}
+header img {
+    width: 20%;
+}
+#game-area {
+    margin-top: 10px;
+    display: grid;
+    grid-template: repeat(9, 30px) / repeat(9, 30px);
+}
+.mine-block {
+    background-color: #C6C6C6;
+    min-height: 10px;
+    display: grid;
+    place-items: center;
+}
+
+/* Different icons for mine blocks */
+.empty {
+    border: #808080 1px solid;
+}
+.mine-block img {
+    width: 80%;
+}
