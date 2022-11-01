@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "item": "Take out the garbage",
+            "completed": "true"
+        },
+        {
+            "item": "Walk the dog",
+            "completed": "false"
+        },
+        {
+            "item": "Groccery shopping",
+            "completed": "true"
+        },
+        {
+            "item": "Completed CV page",
+            "completed": "false"
+        },
+        {
+            "item": "Made a JSON file",
+            "completed": "true"
+        }
+    ]
+}
