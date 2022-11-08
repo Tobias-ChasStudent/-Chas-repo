@@ -135,6 +135,30 @@ main h3 {
 main article {
     margin: 1rem auto;
 }
+/* Modal */
+.modal {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #00000055;
+    padding: 0;
+}
+.displayModal {
+    display: block;
+}
+.modal-content {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    background-color: #ffffff;
+    z-index: 2;
+    color: #000000;
+    padding: 5px;
+}
 /* Contacts main */
 .contacts {
     display: flex;
@@ -190,7 +214,7 @@ footer img {
         flex-direction: row;
     }
     /* About me main */
-    main div:not(.contacts) {
+    main>div:not(.contacts) {
         display: grid;
         grid-template:
         "box-1 ." 1fr 
@@ -246,6 +270,10 @@ footer img {
         width: 70%;
         margin: 10% auto;
         gap: 50px 30%;
+    }
+    /* Modal */
+    .modal-content {
+        margin: 10px auto;
     }
     /* Footer */
     footer img  {
