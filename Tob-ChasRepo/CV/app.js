@@ -15,10 +15,12 @@ function portfolioJSON() {
         
         //Loop through each one and create an element in divProjects
         arrPortfolio.forEach(element => {
+            //Get the key of the element
             let itemKey = Object.keys(element)
+
+            //Create an ID
             let itemID = itemKey.toString()
             itemID = itemID.replace(" ", "-")
-            console.log(itemID);
             //console.log(itemKey);
             //console.log(element[itemKey]);
             
@@ -52,13 +54,56 @@ function portfolioJSON() {
 
         //Add event listener to the article to display a modal
         articleMyProjects.addEventListener("click", () => {
+            //Display the modal
             sectionModal.classList.add("displayModal")
+            document.querySelector("body").style.overflow = "hidden"
         })
 
         sectionModal.addEventListener("click", (e) => {
-            if (e.target != divModalContent) {
+            //If the target was not divModalContent
+            if (e.target == sectionModal) {
+                //Hide the modal
                 sectionModal.classList.remove("displayModal")
+                document.querySelector("body").style.overflow = "scroll"
+                console.log("Hide");
             }
+        })
+        //Fetch the github api
+        fetch("https://api.github.com/users/Tobias-ChasStudent/repos")
+        //Tell js the response is in json
+        .then((Response) => Response.json())
+        .then((data) => {
+            let projectDiv = document.createElement("div")
+            projectDiv.id = "projectDiv"
+            //Loop through each
+            data.forEach(element => {
+                if (element.stargazers_count == 1) {
+                    //Log all the details
+                    console.log(element.name + ": " + element.description + "\n" + "Repo URL:" + element.html_url + "\n" + "Pages URL:" + "https://tobias-chasstudent.github.io/" + element.name);
+                    //Create an aside for the project
+                    let asideProject = document.createElement("aside")
+                    
+                    //Create the title for the project
+                    let titleProject = document.createElement("h3")
+                    titleProject.textContent = element.name
+                    asideProject.appendChild(titleProject)
+
+                    //Create the img for the project
+                    let imgProject = document.createElement("img")
+                    imgProject.setAttribute("src", "../images/" + element.name + ".png")
+                    asideProject.appendChild(imgProject)
+
+                    //Create the desc for the project
+                    let descProject = document.createElement("p")
+                    descProject.textContent = element.description
+                    asideProject.appendChild(descProject)
+
+                    //Append the aside to the modal
+                    projectDiv.appendChild(asideProject)
+                }
+
+            });
+            divModalContent.appendChild(projectDiv)
         })
     })
 }

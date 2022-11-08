@@ -31,30 +31,37 @@ ul {
     --footer-color: #0e1b29;
 
 }
+
 * {
     font-family: 'Roboto', sans-serif;
 }
+
 body {
     background-color: var(--footer-color);
 }
+
 /* Homepage */
 body.home {
     background: url(../images/home-background.jpg);
     background-position: top;
 }
+
 .container {
     width: 70%;
     padding: 10px;
     margin: 5rem auto;
     text-align: center;
 }
+
 .container img {
     width: 70%;
     margin: 30px;
 }
+
 .container header {
     margin-bottom: 30px;
 }
+
 .container ul {
     list-style: none;
     display: grid;
@@ -65,12 +72,14 @@ body.home {
     text-align: center;
     place-items: center;
 }
+
 .container ul li {
-   
-    
+
+
     min-width: 50%;
-    
+
 }
+
 .container ul li a {
     display: block;
     text-decoration: none;
@@ -114,9 +123,11 @@ nav a {
     font-weight: 600;
     padding: 10px;
 }
+
 .active {
     text-decoration: underline solid #ffffff 3px;
 }
+
 /* Main */
 main {
     background-color: var(--main-color);
@@ -128,6 +139,7 @@ main h2 {
     max-width: fit-content;
     margin: 2rem auto;
 }
+
 main h3 {
     margin: .5rem 0;
 }
@@ -135,6 +147,7 @@ main h3 {
 main article {
     margin: 1rem auto;
 }
+
 /* Modal */
 .modal {
     display: none;
@@ -145,138 +158,205 @@ main article {
     top: 0;
     left: 0;
     background-color: #00000055;
-    padding: 0;
+    padding: 20px;
 }
+
 .displayModal {
-    display: block;
+    display: grid;
+    place-items: center;
 }
+
 .modal-content {
     margin: 0 auto;
-    width: 90%;
-    height: auto;
+    min-height: 90%;
     background-color: #ffffff;
     z-index: 2;
     color: #000000;
     padding: 5px;
+    text-align: center;
 }
+
+#projectDiv>* {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.modal-content h2 {
+    margin: 10px auto;
+}
+
+.modal-content img {
+    width: 150px;
+}
+
+.modal-content p {
+    width: fit-content;
+    margin: auto;
+}
+
 /* Contacts main */
 .contacts {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
+
 .contacts article {
     width: 150px;
 }
+
 .contacts img {
     width: 100%;
 }
+
 /* Footer */
 footer {
     background-color: var(--footer-color);
     color: var(--calm-white);
     padding: 1rem;
 }
+
 footer img {
     width: 70%;
     margin: 1rem auto;
 }
+
 @media screen and (min-width: 600px) {
+
     /* Homepage */
     .container {
         width: 80%;
     }
+
     .container ul {
         grid-template: 1fr 1fr / 1fr 1fr;
         grid-template-areas: "cell-1 cell-2"
-        "cell-3 cell-4";
+            "cell-3 cell-4";
         width: 90%;
         gap: 20px 10px;
         padding: 20px;
     }
+
     #cell-1 {
         grid-area: cell-1;
     }
+
     #cell-2 {
         grid-area: cell-2;
     }
+
     #cell-3 {
         grid-area: cell-3;
     }
+
     #cell-4 {
         grid-area: cell-4;
     }
+
     .container ul li {
         width: 85%;
     }
+
     /* Header */
     nav ul {
         flex-direction: row;
     }
+
     /* About me main */
     main>div:not(.contacts) {
         display: grid;
         grid-template:
-        "box-1 ." 1fr 
-        ".box-2 " 1fr 
-        "box-3 ." 1fr
-        ".box-4 " 1fr;
+            "box-1 ."1fr ".box-2 "1fr "box-3 ."1fr ".box-4 "1fr;
         gap: 50px;
     }
+
     main article:nth-child(1) {
         grid-area: box-1;
     }
+
     main article:nth-child(2) {
         grid-area: box-2;
     }
+
     main article:nth-child(3) {
         grid-area: box-3;
     }
+
     main article:nth-child(4) {
         grid-area: box-4;
     }
+
+    /* Modal */
+
+    #projectDiv {
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto auto;
+    }
+
+    #projectDiv>* {
+        margin-top: 0;
+    }
+
+    .modal-content img {
+        width: 70%;
+    }
+    .modal-content p {
+        width: 100%;
+    }
+
     /* Contacts main */
     .contacts {
         flex-direction: row;
     }
+
     /* Footer */
     footer>* {
         width: 30%;
     }
+
     footer img {
         width: 30%;
     }
 }
+
 @media screen and (min-width: 1000px) {
+
     /* Homepage */
     .container {
         height: 90vh;
         margin: .3rem auto;
     }
+
     .container img {
         width: 40%;
     }
+
     .container ul {
         margin: 40px auto 0 auto;
         grid-template: 1fr 1fr / 1fr 1fr 1fr;
         grid-template-areas: "cell-1 . cell-2"
-        "cell-3 . cell-4";
+            "cell-3 . cell-4";
     }
+
     .container ul li {
         width: 60%;
     }
+
     /* About me main */
-    main div:not(.contacts) {
+    main>div:not(.contacts) {
         width: 70%;
         margin: 10% auto;
         gap: 50px 30%;
     }
+
     /* Modal */
     .modal-content {
         margin: 10px auto;
     }
+
     /* Footer */
-    footer img  {
+    footer img {
         width: 20%;
     }
 }
