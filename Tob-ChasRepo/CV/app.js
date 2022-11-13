@@ -52,6 +52,9 @@ function portfolioJSON() {
         //Get the modal content
         const divModalContent = document.querySelector(".modal-content")
 
+        //Get the close modal button
+        const closeModal = document.querySelector("#closeModal")
+
         //Add event listener to the article to display a modal
         articleMyProjects.addEventListener("click", () => {
             //Display the modal
@@ -61,7 +64,7 @@ function portfolioJSON() {
 
         sectionModal.addEventListener("click", (e) => {
             //If the target was not divModalContent
-            if (e.target == sectionModal) {
+            if (e.target == sectionModal || e.target == closeModal) {
                 //Hide the modal
                 sectionModal.classList.remove("displayModal")
                 document.querySelector("body").style.overflow = "scroll"
@@ -73,9 +76,16 @@ function portfolioJSON() {
         //Tell js the response is in json
         .then((Response) => Response.json())
         .then((data) => {
+            //Create a div for the projects
             let projectDiv = document.createElement("div")
             projectDiv.id = "projectDiv"
-            //Loop through each
+
+            //Create a waiting message
+            let waitingMessage = document.createElement("h3")
+            waitingMessage.textContent = "We are loading in the projects, please wait"
+            projectDiv.appendChild(waitingMessage)
+
+            //Loop through each project
             data.forEach(element => {
                 if (element.stargazers_count == 1) {
                     //Log all the details
@@ -103,6 +113,7 @@ function portfolioJSON() {
                 }
 
             });
+            waitingMessage.style.display = "none"
             divModalContent.appendChild(projectDiv)
         })
     })
